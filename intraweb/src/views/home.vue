@@ -1,11 +1,11 @@
 <template>
   <div class="page">
       <div class="d-flex justify-content-between">
-        <div class=" mx-4 text-center clock my-4 border border-2 border-danger-subtle rounded">
+        <div class=" mx-4 text-center clock my-4 border border-2 border-secondary-subtle rounded">
         {{ this.currentTime }}
         </div>
     <div>
-      <div class=" mx-4 text-center my-4 fs-5 border border-2 p-2 rounded border-danger-subtle">
+      <div class=" mx-4 text-center my-4 fs-5 border border-2 p-2 rounded border-secondary-subtle">
         {{ this.currentDate }}
         </div>
     </div>
