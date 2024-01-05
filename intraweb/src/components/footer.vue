@@ -6,7 +6,7 @@
     <div class="col">
       <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
         <div class="p-2 d-flex align-items-center">
-      <img  src="https://www.panates.com/assets/image/panates_yeni_logo.png" alt="GOP">
+      <img width="100px"  src="https://dosyahastane.saglik.gov.tr/WebFiles/logolar/logo-tr.png" alt="GOP">
     </div>
       </a>
       <p class="text-muted">&copy; 2023</p>
