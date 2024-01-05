@@ -1,8 +1,15 @@
 <template>
   <div class="page">
-      <div class=" mx-4 text-center clock my-4">
+      <div class="d-flex justify-content-between">
+        <div class=" mx-4 text-center clock my-4 border border-2 border-danger-subtle rounded">
         {{ this.currentTime }}
+        </div>
+    <div>
+      <div class=" mx-4 text-center my-4 fs-5 border border-2 p-2 rounded border-danger-subtle">
+        {{ this.currentDate }}
+        </div>
     </div>
+      </div>
     <div class="bg-white rounded p-3 mx-3">
       <el-row class="row p-3 justify-content-between">
     <el-col :xs="24" :sm="24" :md="24" :lg="4" :xl="4">
@@ -80,6 +87,7 @@ export default {
   data() {
   return {
     currentTime:0,
+    currentDate:'',
     items:[
       {
         id:1, text:'Duyuru 1', date:'12.12.2021' 
@@ -96,10 +104,21 @@ export default {
         const minutes = now.getMinutes().toString().padStart(2, '0');
         const seconds = now.getSeconds().toString().padStart(2, '0');
         this.currentTime = `${hours}:${minutes}:${seconds}`;
+      },
+      updateDate() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = this.padZero(now.getMonth() + 1);
+        const day = this.padZero(now.getDate());
+        this.currentDate = `${day}-${month}-${year}`;
+      },
+      padZero(v) {
+        return v.toString().padStart(2, '0');
       }
   },
   mounted(){
     setInterval(() =>  this.updateTime(), 1000);
+    this.updateDate();
   }
 };
 </script>
@@ -151,8 +170,6 @@ export default {
 .clock{
       width: 100px;
       height: 50px;
-      border-radius: 10px;
-      border: 2px solid #c7b8b8;
       display: flex;
       align-items: center;
       justify-content: center;
