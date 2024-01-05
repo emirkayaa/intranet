@@ -20,8 +20,7 @@
         <div>
           <a href="" class="text-decoration-none text-black">Eğitim Dokümanları</a>
         </div>
-      </el-menu-item>
-      
+      </el-menu-item>  
     </el-sub-menu>
     <el-sub-menu index="2">
       <template #title>

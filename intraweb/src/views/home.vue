@@ -47,6 +47,13 @@
 
         </div>
       </el-collapse-item>
+      <el-collapse-item name="3">
+        <template #title>
+          <span class="fw-bold fs-6">
+            <a href="https://goppacs.istanbulsaglik.gov.tr/auth/Account/Login?ReturnUrl=%2Fauth%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DSPacsViewer%26redirect_uri%3Dhttps%253A%252F%252Fgoppacs.istanbulsaglik.gov.tr%252Fviewer%252Fstatic%252Fcallback.html%26response_type%3Did_token%2520token%26scope%3Dopenid%2520profile%2520custom.profile%2520SPacs.Api%2520SPacs.AuthApi%2520offline_access%26state%3Ddee73205a6624d00a5938728fa153b2f%26nonce%3De71287ad929a4e4fab626321f0fd0f7d" class="text-decoration-none text-black">PACS Tetkik</a>
+          </span>
+        </template>
+      </el-collapse-item>
     </el-collapse>
   </div>
     </el-col>
