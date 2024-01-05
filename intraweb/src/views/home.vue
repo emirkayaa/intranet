@@ -82,7 +82,7 @@ export default {
     currentTime:0,
     items:[
       {
-        id:1, text:'Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to .Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.', date:'12.12.2021' 
+        id:1, text:'Duyuru 1', date:'12.12.2021' 
       },
       {id:2 , text:'Duyuru 2', date:'12.12.2021' },
       {id:3 , text:'Duyuru 3', date:'12.12.2021' },
