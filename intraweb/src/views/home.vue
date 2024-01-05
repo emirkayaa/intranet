@@ -11,8 +11,8 @@
       <el-collapse-item title="Yemek Listesi" name="1">
         
       </el-collapse-item>
-      <el-collapse-item title="Tıbbi İşlemler" name="2">
-       
+      <el-collapse-item title="Kalite Dokümanları" name="2">
+       <a href="http://10.211.65.199:8100/KALITE/#/pages/signin" class="text-decoration-none text-danger fs-7 fw-bold" target="_blank">Kalite Dokümanları -></a>
       </el-collapse-item>
       <el-collapse-item title="Yemek Listesi" name="3">
       </el-collapse-item>

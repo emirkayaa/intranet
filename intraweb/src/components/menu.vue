@@ -14,7 +14,7 @@
   </el-menu-item>
   <el-sub-menu index="1">
       <template #title>
-        <span class="fs-6 fw-semibold">Kalite Dokümanları</span>
+        <span class="fs-6 fw-semibold">Tıbbı İşlemler</span>
       </template>
       <el-menu-item index="2-1">item one</el-menu-item>
       <el-menu-item index="2-2">item two</el-menu-item>
