@@ -15,16 +15,37 @@
     <el-col :xs="24" :sm="24" :md="24" :lg="4" :xl="4">
       <div class="demo-collapse">
     <el-collapse >
-      <el-collapse-item title="Yemek Listesi" name="1">
-        
+      <el-collapse-item name="1">
+        <template #title>
+          <span class="fw-bold fs-6">Kalite Dokümanları</span>
+        </template>
+       <div class="d-flex flex-column">
+        <a href="http://10.211.65.199:8100/KALITE/#/pages/signin" class="text-decoration-none text-black fs-7" target="_blank">Kalite Dokümanları -></a>
+        <a class="text-decoration-none text-black fs-7" target="_blank" >Dış Kaynaklı Dokümanlar -></a>
+        <a href="" class="text-decoration-none text-black fs-7" target="_blank">Dış Kaynaklı Laboratuvar Dokümanları -></a>
+        <a class="text-decoration-none text-black fs-7" target="_blank" >Etik Kurulu Retrospektif -></a>
+        <a href="" class="text-decoration-none text-black fs-7" target="_blank">Etik Kurulu Prospektif -></a>       
+       </div>
       </el-collapse-item>
-      <el-collapse-item title="Kalite Dokümanları" name="2">
-       <a href="http://10.211.65.199:8100/KALITE/#/pages/signin" class="text-decoration-none text-danger fs-7 fw-bold" target="_blank">Kalite Dokümanları -></a>
+      <el-collapse-item name="2">
+        <template #title>
+          <span class="fw-bold fs-6">İstenmeyen Olay Bildirimi</span>
+        </template>
+        <div>
+          <a href="" class="text-decoration-none text-black">İstenmeyen Olay Bildirim Sistemi -></a>
+        </div>
       </el-collapse-item>
-      <el-collapse-item title="Yemek Listesi" name="3">
-      </el-collapse-item>
-      <el-collapse-item title="Nöbet ve Çalışma Listesi" name="4">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam dolorum quos nesciunt possimus, quisquam unde earum nulla commodi eaque, totam laboriosam dolor eligendi error non deserunt tempora dolorem, sequi facere.
+      <el-collapse-item name="3">
+        <template #title>
+          <span class="fw-bold fs-6">Tıp Kaynakları Erişimi</span>
+        </template>
+        <div class="d-flex flex-column">
+          <a href="https://www.clinicalkey.com/" class="text-decoration-none text-black" target="_blank">ClinicalKey</a>
+          <a href="https://www.dynamed.com/" class="text-decoration-none text-black" target="_blank">Dynamed</a>
+          <a href="https://www.uptodate.com/contents/search" class="text-decoration-none text-black" target="_blank">Uptodate</a>
+          <a href="https://www.ebscohost.com/" class="text-decoration-none text-black" target="_blank">EBSCO Health</a>
+
+        </div>
       </el-collapse-item>
     </el-collapse>
   </div>

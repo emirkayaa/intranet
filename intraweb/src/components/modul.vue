@@ -7,8 +7,8 @@
     </div>
     <div class="row justify-content-center">
         <div v-for="o in modüller" :key="o" class="card border-0 p-2 rounded col-lg-3 col-md-6 m-1 ">
-        <img width="100%" class="rounded" :src="o.photo" alt="">
-        <div class="card-body">
+        <img width="100%" height="200px" class="rounded" :src="o.photo" alt="">
+        <div class="card-body d-flex flex-column align-items-center">
             <h5 class="card-title fw-bold">{{ o.name }}</h5>
             <p class="card-text">{{ o.text }}</p>
             <el-button type="primary">
