@@ -117,31 +117,75 @@
           </el-carousel>
         </el-col>
         <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
-          <el-card
-            class="mx-2 border-0 text-center overflow-auto"
-            style="height: 300px !important"
-          >
-            <div class="text-black fw-semibold">DUYURULAR</div>
-            <el-divider></el-divider>
-            <div v-for="o in items" :key="o">
-              <div class="duyurular">
-                <div class="duyurular-tarih">
-                  <span class="fw-semibold">{{ o.date }}</span>
+          <div class="demo-collapse px-2">
+            <el-collapse>
+              <el-collapse-item name="1">
+                <template #title>
+                  <span class="fw-bold fs-6">Kalite Dokümanları</span>
+                </template>
+                <div class="d-flex flex-column">
+                  <a
+                    href="http://10.211.65.199:8100/KALITE/#/pages/signin"
+                    class="text-decoration-none text-black fs-7"
+                    target="_blank"
+                    >Kalite Dokümanları -></a
+                  >
+                  <a
+                    class="text-decoration-none text-black fs-7"
+                    target="_blank"
+                    >Dış Kaynaklı Dokümanlar -></a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none text-black fs-7"
+                    target="_blank"
+                    >Dış Kaynaklı Laboratuvar Dokümanları -></a
+                  >
+                  <a
+                    class="text-decoration-none text-black fs-7"
+                    target="_blank"
+                    >Etik Kurulu Retrospektif -></a
+                  >
+                  <a
+                    href=""
+                    class="text-decoration-none text-black fs-7"
+                    target="_blank"
+                    >Etik Kurulu Prospektif -></a
+                  >
                 </div>
-                <div>
-                  <span class="fw-semibold duyurular-baslik">{{ o.text }}</span>
+              </el-collapse-item>
+              <el-collapse-item name="2">
+                <template #title>
+                  <span class="fw-bold fs-6 text-black">Nöbet Çalışma Listesi</span>
+                </template>
+                <div class="d-flex flex-column">
+                  <a href="" class="text-decoration-none text-muted fs-6 fw-semibold"
+                    >Doktor Çalışma Listesi -></a
+                  >
+                  <a href="" class="text-decoration-none text-muted fs-6 fw-semibold"
+                    >Hemşire Çalışma Listesi -></a
+                  >
+                  <a href="" class="text-decoration-none text-muted fs-6 fw-semibold"
+                    >İşçi Çalışma Listesi -></a
+                  >
                 </div>
+              </el-collapse-item>
+              <div class="py-2" name="4">
+                <span class="fs-6 fw-semibold">
+                  <a class="text-black text-decoration-none" target="_blank" href="/izin">
+                    İzinli ve Raporlu Personeller
+                  </a>
+                </span>
               </div>
-            </div>
-            <div v-if="items.length > 2">
-              <el-divider></el-divider>
-              <div class="text-center">
-                <el-button class="fw-bold" type="primary" plain
-                  >Tüm Duyurular</el-button
-                >
+              <div class="py-2" name="4">
+                <span class="fs-6 fw-semibold">
+                  <a class="text-black text-decoration-none" target="_blank" href="https://docs.google.com/spreadsheets/d/10IYiDLbiXMbPsuJUloII6AJzKRUN7db6idyDvxXFBHE/edit#gid=0">
+                    Yemek Listesi
+                  </a>
+                </span>
               </div>
-            </div>
-          </el-card>
+            </el-collapse>
+          </div>
         </el-col>
       </el-row>
     </div>
