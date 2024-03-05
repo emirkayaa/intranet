@@ -8,6 +8,9 @@
           <el-divider class="w-25"></el-divider>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
+              <a href="https://gopeah.saglik.gov.tr" target="_blank" class="nav-link p-0 text-muted">Hastane Web Sitesi</a>
+            </li>
+            <li class="nav-item mb-2">
               <a href="https://gopeah.saglik.gov.tr/TR-607096/hasta-rehberi.html" target="_blank" class="nav-link p-0 text-muted">Hasta Rehberi</a>
             </li>
             <li class="nav-item mb-2">

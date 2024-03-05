@@ -152,17 +152,29 @@
                 </span>
               </div>
               <el-divider class="m-0"></el-divider>
-              <el-collapse-item name="5">
+              <el-collapse-item  name="5">
                 <template #title>
                   <span class="fw-bold fs-6 text-black">Doğum Günü Listesi</span>
                 </template>
-                <div class="d-flex flex-column justify-content-center align-items-center">
-                  <img src="https://img.freepik.com/free-vector/happy-birthday-card-with-giant-birthday-cake_23-2149002726.jpg?t=st=1709635966~exp=1709639566~hmac=17e72f65782d06456e0a88f8a4765e100333e7cc17289c206ad656b8fbe32d86&w=740" width="200" alt="Doğum Günü">
-                
+                <div class=" text-center">
+                  <div>
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-happy-birthday-background_23-2148595649.jpg?t=st=1709639094~exp=1709642694~hmac=6361f58b8eed936ad9e728a09b1194ca6865b315b85903c803c98196be30b6ae&w=740" width="200" alt="Doğum Günü">
+                    <p class="fs-5" style="color:#D29235">Doğum Gününüz Kutlu Olsun</p>
+                  </div>
+                  <el-row>
+                      <el-col :span="8"><div>
+                        <span class="fs-6">Hakan Kocaoğlu</span>
+                      </div></el-col>
+                      <el-col :span="8"><div>
+                        <span class="fs-6">Hakan Kocaoğlu</span>
+                      </div></el-col>
+                      <el-col :span="8"><div>
+                        <span class="fs-6">Hakan Kocaoğlu</span>
+                      </div></el-col>
+                      
+                    </el-row>
                 </div>
               </el-collapse-item>
-             
-              
             </el-collapse>
           </div>
         </el-col>
@@ -189,7 +201,6 @@ export default {
     return {
       currentTime: "",
       currentDate: "",
-     
     };
   },
   methods: {
