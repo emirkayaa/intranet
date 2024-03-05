@@ -138,9 +138,9 @@
               </el-collapse-item>
               <div class="py-2" name="4">
                 <span class="fs-6 fw-semibold">
-                  <a class="text-black text-decoration-none" target="_blank" href="/izin">
+                  <router-link class="text-black text-decoration-none" target="_blank" to="/izin">
                     İzinli ve Raporlu Personeller
-                  </a>
+                  </router-link>
                 </span>
               </div>
               <el-divider class="m-0"></el-divider>
