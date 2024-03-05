@@ -119,41 +119,7 @@
         <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
           <div class="demo-collapse px-2">
             <el-collapse>
-              <el-collapse-item name="1">
-                <template #title>
-                  <span class="fw-bold fs-6">Kalite Dokümanları</span>
-                </template>
-                <div class="d-flex flex-column">
-                  <a
-                    href="http://10.211.65.199:8100/KALITE/#/pages/signin"
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Kalite Dokümanları -></a
-                  >
-                  <a
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Dış Kaynaklı Dokümanlar -></a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Dış Kaynaklı Laboratuvar Dokümanları -></a
-                  >
-                  <a
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Etik Kurulu Retrospektif -></a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Etik Kurulu Prospektif -></a
-                  >
-                </div>
-              </el-collapse-item>
+              
               <el-collapse-item name="2">
                 <template #title>
                   <span class="fw-bold fs-6 text-black">Nöbet Çalışma Listesi</span>
@@ -177,6 +143,7 @@
                   </a>
                 </span>
               </div>
+              <el-divider class="m-0"></el-divider>
               <div class="py-2" name="4">
                 <span class="fs-6 fw-semibold">
                   <a class="text-black text-decoration-none" target="_blank" href="https://docs.google.com/spreadsheets/d/10IYiDLbiXMbPsuJUloII6AJzKRUN7db6idyDvxXFBHE/edit#gid=0">
@@ -184,6 +151,18 @@
                   </a>
                 </span>
               </div>
+              <el-divider class="m-0"></el-divider>
+              <el-collapse-item name="5">
+                <template #title>
+                  <span class="fw-bold fs-6 text-black">Doğum Günü Listesi</span>
+                </template>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                  <img src="https://img.freepik.com/free-vector/happy-birthday-card-with-giant-birthday-cake_23-2149002726.jpg?t=st=1709635966~exp=1709639566~hmac=17e72f65782d06456e0a88f8a4765e100333e7cc17289c206ad656b8fbe32d86&w=740" width="200" alt="Doğum Günü">
+                
+                </div>
+              </el-collapse-item>
+             
+              
             </el-collapse>
           </div>
         </el-col>
@@ -210,15 +189,7 @@ export default {
     return {
       currentTime: "",
       currentDate: "",
-      items: [
-        {
-          id: 1,
-          text: "Duyuru 1",
-          date: "12.12.2021",
-        },
-        { id: 2, text: "Duyuru 2", date: "12.12.2021" },
-        { id: 3, text: "Duyuru 3", date: "12.12.2021" },
-      ],
+     
     };
   },
   methods: {
@@ -266,28 +237,8 @@ export default {
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
-.duyurular {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 10px;
-}
-.duyurular-tarih {
-  padding: 5px;
-  margin-right: 10px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  border: 1px solid #4f79a7;
-  display: flex;
-  color: #4f79a7;
-  justify-content: center;
-  align-items: center;
-}
-.duyurular-baslik:hover {
-  color: #e33545;
-  cursor: pointer;
+.el-divider{
+ color: #EBEEF5 !important;
 }
 .clock {
   width: 100px;
