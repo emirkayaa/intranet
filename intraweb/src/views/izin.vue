@@ -14,7 +14,7 @@ export default {
     },
     methods:{
         getData(){
-            axios.get('http://10.211.65.196:8080/svc/sbys/sistem/bilgi_servisleri/intranet/',{
+            axios.get('http://10.211.65.196:8080/svc/sbys/sistem/bilgi_servisleri/intranet/IzinListele',{
                 headers: {
                     'Access-Token': '9747C3235A15402D94CF556B55E9DDFB'
                 }
