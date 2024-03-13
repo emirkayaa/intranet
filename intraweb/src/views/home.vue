@@ -160,18 +160,12 @@
                   <div>
                     <img src="https://img.freepik.com/free-vector/hand-drawn-happy-birthday-background_23-2148595649.jpg?t=st=1709639094~exp=1709642694~hmac=6361f58b8eed936ad9e728a09b1194ca6865b315b85903c803c98196be30b6ae&w=740" width="200" alt="Doğum Günü">
                     <p class="fs-5" style="color:#D29235">Doğum Gününüz Kutlu Olsun</p>
+                    <button @click="start">Konfeti</button>
                   </div>
                   <el-row>
-                      <el-col :span="8"><div>
-                        <span class="fs-6">Hakan Kocaoğlu</span>
+                      <el-col v-for="name in data.rows" :key="name" :span="12"><div>
+                        <span class="fs-6 text-nowrap">{{name[1]}}</span>
                       </div></el-col>
-                      <el-col :span="8"><div>
-                        <span class="fs-6">Hakan Kocaoğlu</span>
-                      </div></el-col>
-                      <el-col :span="8"><div>
-                        <span class="fs-6">Hakan Kocaoğlu</span>
-                      </div></el-col>
-                      
                     </el-row>
                 </div>
               </el-collapse-item>
@@ -192,6 +186,7 @@
 <script>
 import Moduller from "@/components/modul.vue";
 import Footer from "@/components/footer.vue";
+import axios from "axios";
 export default {
   components: {
     Moduller,
@@ -201,9 +196,25 @@ export default {
     return {
       currentTime: "",
       currentDate: "",
+      data:{}
     };
   },
   methods: {
+    start() {
+        this.$confetti.start();
+      },
+    dogumGunu(){
+      axios.get('http://10.211.65.196:8080/svc/sbys/sistem/bilgi_servisleri/intranet/DogumgunuListele',{
+        headers: {
+          'Access-Token': '9747C3235A15402D94CF556B55E9DDFB'
+        }
+      }).then(res => {
+        this.data = res.data
+        console.log(res.data.rows)
+      }).catch(err =>{
+        console.log(err)
+      })
+    },
     updateTime() {
       const now = new Date();
       const hours = now.getHours().toString().padStart(2, "0");
@@ -225,6 +236,7 @@ export default {
   mounted() {
     setInterval(() => this.updateTime(), 1000);
     this.updateDate();
+    this.dogumGunu()
   },
 };
 </script>
