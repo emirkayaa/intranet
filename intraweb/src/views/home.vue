@@ -160,7 +160,7 @@
                   <div>
                     <img src="https://img.freepik.com/free-vector/hand-drawn-happy-birthday-background_23-2148595649.jpg?t=st=1709639094~exp=1709642694~hmac=6361f58b8eed936ad9e728a09b1194ca6865b315b85903c803c98196be30b6ae&w=740" width="200" alt="Doğum Günü">
                     <p class="fs-5" style="color:#D29235">Doğum Gününüz Kutlu Olsun</p>
-                    <button @click="start">Konfeti</button>
+                    
                   </div>
                   <el-row>
                       <el-col v-for="name in data.rows" :key="name" :span="12"><div>
