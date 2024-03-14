@@ -140,10 +140,12 @@
                     
                   </div>
                   <el-row>
-                      <el-col v-for="name in data.rows" :key="name" :span="12"><div>
+                      <el-col v-for="name in data.rows" :key="name" :span="12">
+                        <div class="isim-box">
                         <span class="fs-6 text-nowrap">{{name[1]}}</span>
-                      </div></el-col>
-                    </el-row>
+                       </div>
+                    </el-col>
+                  </el-row>
                 </div>
               </el-collapse-item>
             </el-collapse>
@@ -253,7 +255,10 @@ export default {
   padding-right: 5px !important;
   padding-left: 5px !important;
 }
-
+.isim-box{
+  height: 30px;
+  overflow: auto;
+}
 .el-card.is-always-shadow {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
