@@ -30,43 +30,21 @@
                     target="_blank"
                     >Kalite Dokümanları -></a
                   >
-                  <a
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Dış Kaynaklı Dokümanlar -></a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Dış Kaynaklı Laboratuvar Dokümanları -></a
-                  >
-                  <a
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Etik Kurulu Retrospektif -></a
-                  >
-                  <a
-                    href=""
-                    class="text-decoration-none text-black fs-7"
-                    target="_blank"
-                    >Etik Kurulu Prospektif -></a
-                  >
                 </div>
               </el-collapse-item>
               <el-collapse-item name="2">
                 <template #title>
-                  <span class="fw-bold fs-6">İstenmeyen Olay Bildirimi</span>
+                  <span class="fw-bold fs-6 text-black">İstenmeyen Olay Bildirimi</span>
                 </template>
                 <div>
-                  <a href="" class="text-decoration-none text-black"
+                  <a href="http://10.211.65.138/skrsguvenlik" class="text-decoration-none text-black"
                     >İstenmeyen Olay Bildirim Sistemi -></a
                   >
                 </div>
               </el-collapse-item>
               <el-collapse-item name="3">
                 <template #title>
-                  <span class="fw-bold fs-6">Tıp Kaynakları Erişimi</span>
+                  <span class="fw-bold fs-6 text-black">Tıp Kaynakları Erişimi</span>
                 </template>
                 <div class="d-flex flex-column">
                   <a
@@ -96,8 +74,8 @@
                 </div>
               </el-collapse-item>
               <div class="py-2" name="4">
-                <span class="fs-6 fw-bold">
-                  <a class="text-black text-decoration-none" href="https://goppacs.istanbulsaglik.gov.tr/auth/Account/Login?ReturnUrl=%2Fauth%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DSPacsViewer%26redirect_uri%3Dhttps%253A%252F%252Fgoppacs.istanbulsaglik.gov.tr%252Fviewer%252Fstatic%252Fcallback.html%26response_type%3Did_token%2520token%26scope%3Dopenid%2520profile%2520custom.profile%2520SPacs.Api%2520SPacs.AuthApi%2520offline_access%26state%3Ddee73205a6624d00a5938728fa153b2f%26nonce%3De71287ad929a4e4fab626321f0fd0f7d">
+                <span >
+                  <a class=" s-6 fw-bold text-black text-decoration-none" href="https://goppacs.istanbulsaglik.gov.tr/auth/Account/Login?ReturnUrl=%2Fauth%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DSPacsViewer%26redirect_uri%3Dhttps%253A%252F%252Fgoppacs.istanbulsaglik.gov.tr%252Fviewer%252Fstatic%252Fcallback.html%26response_type%3Did_token%2520token%26scope%3Dopenid%2520profile%2520custom.profile%2520SPacs.Api%2520SPacs.AuthApi%2520offline_access%26state%3Ddee73205a6624d00a5938728fa153b2f%26nonce%3De71287ad929a4e4fab626321f0fd0f7d">
                     PACS Tetkik
                   </a>
                 </span>
@@ -118,21 +96,20 @@
         </el-col>
         <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
           <div class="demo-collapse px-2">
-            <el-collapse>
-              
+            <el-collapse v-model="active">
               <el-collapse-item name="2">
                 <template #title>
                   <span class="fw-bold fs-6 text-black">Nöbet Çalışma Listesi</span>
                 </template>
                 <div class="d-flex flex-column">
-                  <a href="" class="text-decoration-none text-muted fs-6 fw-semibold"
-                    >Doktor Çalışma Listesi -></a
+                  <router-link to="/doktor" class="text-decoration-none text-muted fs-6 fw-semibold"
+                    >Doktor Çalışma Listesi -></router-link
                   >
-                  <a href="" class="text-decoration-none text-muted fs-6 fw-semibold"
-                    >Hemşire Çalışma Listesi -></a
+                  <router-link to="/hemsire" class="text-decoration-none text-muted fs-6 fw-semibold"
+                    >Hemşire Çalışma Listesi -></router-link
                   >
-                  <a href="" class="text-decoration-none text-muted fs-6 fw-semibold"
-                    >İşçi Çalışma Listesi -></a
+                  <router-link to="/isci" class="text-decoration-none text-muted fs-6 fw-semibold"
+                    >İşçi Çalışma Listesi -></router-link
                   >
                 </div>
               </el-collapse-item>
@@ -196,7 +173,8 @@ export default {
     return {
       currentTime: "",
       currentDate: "",
-      data:{}
+      data:{},
+      active: ["5"],
     };
   },
   methods: {

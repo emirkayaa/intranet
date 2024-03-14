@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/home.vue'
-import izin from '../views/izin.vue'
+import İzin from '../views/izin.vue'
+import Hemsire from '../views/calisma/hemsire.vue'
+import Doktor from '../views/calisma/doktor.vue'
+import İsci from '../views/calisma/isci.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,9 +16,23 @@ const router = createRouter({
     {
       path: '/izin',
       name: 'izin',
-      component: izin
+      component: İzin
     },
-    
+    {
+      path: '/hemsire',
+      name: 'hemsire',
+      component: Hemsire
+    },
+    {
+      path: '/doktor',
+      name: 'doktor',
+      component: Doktor
+    },
+    {
+      path: '/isci',
+      name: 'isci',
+      component: İsci
+    }
   ]
 })
 

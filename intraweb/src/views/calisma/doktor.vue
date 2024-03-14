@@ -12,29 +12,20 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title">İzin Listesi</h4>
+              <h4 class="card-title">Hekim Çalışma Listesi</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table text-center">
                   <thead>
-                    <th >
+                    <th>
                       <span class="fw-semibold fs-5">ADI SOYADI</span>
                     </th>
-                    <th >
-                      <span class="fw-semibold fs-5">İZİN TÜRÜ</span>
-                    </th>
-                    <th >
+                    <th>
                       <span class="fw-semibold fs-5">BAŞLAMA TARİHİ</span>
                     </th>
-                    <th >
-                      <span class="fw-semibold fs-5">BİTİŞ TARİHİ</span>
-                    </th>
-                    <th >
-                      <span class="fw-semibold fs-5">DÖNÜŞ TARİHİ</span>
-                    </th>
-                    <th >
-                      <span class="fw-semibold fs-5">SÜRESİ</span>
+                    <th>
+                      <span class="fw-semibold fs-5">BİRİMİ</span>
                     </th>
                   </thead>
                   <tbody>
@@ -43,19 +34,10 @@
                         {{ data[0] }}
                       </td>
                       <td>
-                        {{ data[1] }}
+                        {{ moment(data[1]).format('DD.MM.YYYY') }}
                       </td>
                       <td>
-                        {{ moment(data[2]).format("DD.MM.YYYY") }}
-                      </td>
-                      <td>
-                        {{ moment(data[3]).format("DD.MM.YYYY") }}
-                      </td>
-                      <td>
-                        {{ moment(data[4]).format("DD.MM.YYYY") }}
-                      </td>
-                      <td>
-                        {{ data[5] }}
+                        {{ data[2] }}
                       </td>
                     </tr>
                   </tbody>
@@ -67,9 +49,21 @@
       </div>
       <div class="d-flex justify-content-center mt-2 align-items-center">
         <div class="pagination d-flex align-items-center mx-2">
-      <button class="btn btn-outline-danger" @click="prevPage" :disabled="currentPage === 1">Önceki Sayfa</button>
-      <span class="mx-2">{{ currentPage }} / {{ totalPages }}</span>
-      <button class="btn btn-outline-danger" @click="nextPage" :disabled="currentPage === totalPages">Sonraki Sayfa</button>
+          <button
+            class="btn btn-outline-danger"
+            @click="prevPage"
+            :disabled="currentPage === 1"
+          >
+            Önceki Sayfa
+          </button>
+          <span class="mx-2">{{ currentPage }} / {{ totalPages }}</span>
+          <button
+            class="btn btn-outline-danger"
+            @click="nextPage"
+            :disabled="currentPage === totalPages"
+          >
+            Sonraki Sayfa
+          </button>
         </div>
       </div>
     </div>
@@ -77,37 +71,27 @@
 </template>
 
 <script>
-import axios from "axios";
-import moment from "moment";
+import axios from 'axios';
+import moment from 'moment';
 export default {
   data() {
     return {
-      data: {},
-      tableName: {},
       pageSize: 100,
       currentPage: 1,
+      data:{},
       moment
-    };
+    }
   },
-  methods: {
-    getData() {
-      axios
-        .get(
-          "http://10.211.65.196:8080/svc/sbys/sistem/bilgi_servisleri/intranet/IzinListele",
-          {
-            headers: {
-              "Access-Token": "9747C3235A15402D94CF556B55E9DDFB",
-            },
-          }
-        )
-        .then((response) => {
-          this.data = response.data;
-          console.log(this.data);
-          this.tableName = this.data.fields;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+  methods:{
+    getData(){
+      axios.get('http://10.211.65.196:8080/svc/sbys/sistem/bilgi_servisleri/intranet/HekimCalismaListele',{
+        headers: {
+          'Access-Token': '9747C3235A15402D94CF556B55E9DDFB',
+        }
+      }).then(res =>{
+        this.data = res.data;
+        console.log(this.data)
+      })
     },
     nextPage() {
       if (this.currentPage < this.totalPages) {
@@ -120,10 +104,10 @@ export default {
       }
     },
   },
-  mounted() {
-    this.getData();
+  mounted(){
+    this.getData()
   },
-  computed: {
+  computed:{
     totalPages() {
       return Math.ceil(this.data.rows?.length / this.pageSize);
     },
@@ -132,7 +116,7 @@ export default {
       const endIndex = startIndex + this.pageSize;
       return this.data.rows?.slice(startIndex, endIndex);
     },
-  },
+  }
 };
 </script>
 

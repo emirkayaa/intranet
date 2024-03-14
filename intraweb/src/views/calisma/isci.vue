@@ -12,7 +12,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title">İzin Listesi</h4>
+              <h4 class="card-title">İşçi Çalışma Listesi</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -22,19 +22,13 @@
                       <span class="fw-semibold fs-5">ADI SOYADI</span>
                     </th>
                     <th >
-                      <span class="fw-semibold fs-5">İZİN TÜRÜ</span>
+                      <span class="fw-semibold fs-5">GÖREVİ</span>
                     </th>
                     <th >
-                      <span class="fw-semibold fs-5">BAŞLAMA TARİHİ</span>
+                      <span class="fw-semibold fs-5">PLANI</span>
                     </th>
                     <th >
-                      <span class="fw-semibold fs-5">BİTİŞ TARİHİ</span>
-                    </th>
-                    <th >
-                      <span class="fw-semibold fs-5">DÖNÜŞ TARİHİ</span>
-                    </th>
-                    <th >
-                      <span class="fw-semibold fs-5">SÜRESİ</span>
+                      <span class="fw-semibold fs-5">TARİHİ</span>
                     </th>
                   </thead>
                   <tbody>
@@ -46,17 +40,12 @@
                         {{ data[1] }}
                       </td>
                       <td>
-                        {{ moment(data[2]).format("DD.MM.YYYY") }}
+                        {{ data[2] }}
                       </td>
                       <td>
                         {{ moment(data[3]).format("DD.MM.YYYY") }}
                       </td>
-                      <td>
-                        {{ moment(data[4]).format("DD.MM.YYYY") }}
-                      </td>
-                      <td>
-                        {{ data[5] }}
-                      </td>
+                      
                     </tr>
                   </tbody>
                 </table>
@@ -77,37 +66,28 @@
 </template>
 
 <script>
-import axios from "axios";
-import moment from "moment";
+import axios from 'axios'
+import moment from 'moment'
 export default {
-  data() {
-    return {
-      data: {},
+  data(){
+    return{
+      data:{},
       tableName: {},
       pageSize: 100,
       currentPage: 1,
       moment
-    };
+    }
   },
-  methods: {
-    getData() {
-      axios
-        .get(
-          "http://10.211.65.196:8080/svc/sbys/sistem/bilgi_servisleri/intranet/IzinListele",
-          {
-            headers: {
-              "Access-Token": "9747C3235A15402D94CF556B55E9DDFB",
-            },
-          }
-        )
-        .then((response) => {
-          this.data = response.data;
-          console.log(this.data);
-          this.tableName = this.data.fields;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+  methods:{
+    getData(){
+      axios.get('http://10.211.65.196:8080/svc/sbys/sistem/bilgi_servisleri/intranet/IsciNobetListele',{
+        headers: {
+          'Access-Token': '9747C3235A15402D94CF556B55E9DDFB',
+        }
+      }).then(res =>{
+        this.data = res.data;
+        console.log(this.data)
+      })
     },
     nextPage() {
       if (this.currentPage < this.totalPages) {
@@ -120,10 +100,10 @@ export default {
       }
     },
   },
-  mounted() {
-    this.getData();
+  mounted(){
+    this.getData()
   },
-  computed: {
+  computed:{
     totalPages() {
       return Math.ceil(this.data.rows?.length / this.pageSize);
     },
@@ -132,8 +112,10 @@ export default {
       const endIndex = startIndex + this.pageSize;
       return this.data.rows?.slice(startIndex, endIndex);
     },
-  },
-};
+  }
+}
 </script>
 
-<style></style>
+<style>
+
+</style>
